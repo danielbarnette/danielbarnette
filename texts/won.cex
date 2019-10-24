@@ -1,3 +1,17 @@
+
+#!cexversion
+3.0
+
+#!citelibrary
+name#AUTHOR_NAME
+urn#urn:cite2:cex:fufolio.2019a:texts
+license#CC Share Alike.  For details, see more info.
+
+#!ctscatalog
+urn#citationScheme#groupName#workTitle#versionLabel#exemplarLabel#online#lang
+urn:cts:fuTexts:dumas.count.weeks:#chapter/paragraph#Alexandre Dumas#The Count of Monte Cristo#C. Weeks, ed., from an anonymous translation,1846##true#eng
+
+#!ctsdata
 urn:cts:fuTexts:asmith.won.barnette:head.front.1#TITLE PAGE
 urn:cts:fuTexts:asmith.won.barnette:head.front.2#AN INQUIRY INTO THE NATURE AND CAUSES OF THE WEALTH OF NATIONS.
 urn:cts:fuTexts:asmith.won.barnette:head.front.3#BY ADAM SMITH LL.D. F.R.S.  
