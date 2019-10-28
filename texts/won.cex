@@ -9,7 +9,7 @@ license#CC Share Alike.  For details, see more info.
 
 #!ctscatalog
 urn#citationScheme#groupName#workTitle#versionLabel#exemplarLabel#online#lang
-urn:cts:fuTexts:dumas.count.weeks:#chapter/paragraph#Alexandre Dumas#The Count of Monte Cristo#C. Weeks, ed., from an anonymous translation,1846##true#eng
+urn:cts:fuTexts:GROUP.WORK.VERSION:#CITATION-SCHEME#NAME-OF-GROUP#TITLE-OF-WORK#INFO-ABOUT-VERSION##true#eng
 
 #!ctsdata
 urn:cts:fuTexts:asmith.won.barnette:head.front.1#TITLE PAGE
