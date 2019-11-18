@@ -9,7 +9,7 @@ license#CC Share Alike.  For details, see more info.
 
 #!ctscatalog
 urn#citationScheme#groupName#workTitle#versionLabel#exemplarLabel#online#lang
-urn:cts:fuTexts:GROUP.WORK.VERSION:#CITATION-SCHEME#NAME-OF-GROUP#TITLE-OF-WORK#INFO-ABOUT-VERSION##true#eng
+urn:cts:fuTexts:asmith.won.barnette:#Volume/Book/Chapter#Adam Smith#Wealth of Nations#Barnette##true#eng
 
 #!ctsdata
 urn:cts:fuTexts:asmith.won.barnette:head.front.1#TITLE PAGE
