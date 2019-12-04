@@ -2,7 +2,7 @@ import scala.io.Source
 
 :load utilities.sc
 //load the text into a string
-val myLines: Vector[String] = loadFile("text/clean_beyond_good_and_evil.txt")
+val myLines: Vector[String] = loadFile("texts/adamsmith.txt")
 //create a vector of all the caharachters in the text
 val chars: Vector[Char] = myLines.mkString(" ").toVector
 //take out the spaces

@@ -21,7 +21,7 @@ Remember: Scroll up to the FIRST error. Fix that, then re-run.
 
 *********************************************** */
 
-val lib: CiteLibrary = loadLibrary("text/arist_politics.cex")
+val lib: CiteLibrary = loadLibrary("texts/won.cex")
 
 val tr: TextRepository = lib.textRepository.get
 
@@ -33,7 +33,7 @@ val corp: Corpus = tr.corpus
 
 /* Let's turn a CTS text into a Vector[String] by word-tokenizing! */
 
-/* 
+/*
 What defines a word-break? Note the [ ], making this a regex…
 … "any one of these"
 */
@@ -74,7 +74,7 @@ val tokenHisto: Vector[(String, Int)] = {
 	// assemble words into groups…
 	val grouped: Vector[( String, Vector[String])] = tokenizedVector.groupBy( t => t) // Why an error here?
 
-	// Map the _._2 part of tuple _out of_ a Vector[String] and _into_ its size…	
+	// Map the _._2 part of tuple _out of_ a Vector[String] and _into_ its size…
 	val remapped: Vector[ ( String, Int) ] = grouped.map( t => (t._1, t._2.size))
 
 	// Sort…
@@ -92,5 +92,3 @@ showMe(tokenHisto)
 	- Here "But" and "but" are two listings. How to fix this?	Where?
 
 */
-
-
