@@ -26,7 +26,7 @@ val corp: Corpus = tr.corpus
 val charHisto: Vector[(Char, Int)] = {
 
 	// For each node in the Corpus, keep only the text-part (toss the URN)
-	val justText: Vector[String] = corp.nodes.map( _.texts )
+	val justText: Vector[String] = corp.nodes.map( _.text )
 
 	// Map each element of that Vector to a Vector[Char]
 	//      (Remember that a String is, really, just a Vector[Char] anyway!)
@@ -76,7 +76,7 @@ val badCharsInText: Vector[Char] = charList.diff(goodChars)
 val badCharCorpus: Corpus = {
 	// Filter the contents of 'corp' by omitting any nodes that have _no_ bad chars
 	val badNodes: Vector[CitableNode] = corp.nodes.filter( n => {
-		val chars: Vector[Char] = n.texts.toVector.distinct
+		val chars: Vector[Char] = n.text.toVector.distinct
 		// vectorA.diff(vectorB) is something you can play with in the console…
 		chars.diff(goodChars).size > 0
 	})
