@@ -83,7 +83,7 @@ val badCharCorpus: Corpus = {
 	// For each of the offending nodes, make a new version that has only the bad chars
 	val boiledDown: Vector[CitableNode] = badNodes.map( n => {
 		val u: CtsUrn = n.urn
-		val cc: Vector[Char] = n.text.toVector.distinct
+		val cc: Vector[Char] = n.texts.toVector.distinct
 		val badCharString: String = cc.diff(goodChars).mkString(" ")
 		// return the following as the value of boiledDown
 		CitableNode(u, badCharString)
