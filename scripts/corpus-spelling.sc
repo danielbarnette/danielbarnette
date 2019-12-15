@@ -6,8 +6,8 @@ val spellCheckSplitters: String =  """[()\[\]·⸁.,; "?·!–—⸂⸃-]"""
 
 val lib: CiteLibrary = loadLibrary("texts/won.cex")
 
-val standardDict: Vector[String] = loadFile("validation-data/SCOWL-wl/words.txt")
-val userDict: Vector[String] = loadFile("validation-data/userDictionary.txt")
+val standardDict: Vector[String] = loadFile("validation-data/SCOWL-wl/standardDict.txt")
+val userDict: Vector[String] = loadFile("validation-data/user-dictionary.txt")
 val words: Vector[String] = standardDict ++ userDict
 
 val tr: TextRepository = lib.textRepository.get
@@ -64,16 +64,16 @@ val wordIndex: Vector[ (String, Vector[CtsUrn]) ] = {
 		Here's a problem… capitalized normal words.
 		The word-list has "the" but not "The".
 		We don't want to lower-case all words, because it has "Paris" but
-		not "paris".			
+		not "paris".
 		So we check for both…
 */
 val badWords1: Vector[ (String, Vector[CtsUrn]) ] = {
 	wordIndex.filter( wi => {
 
-		val hasRegular: Boolean = words.contains(wi._1) 
-		val hasLowerCase: Boolean = words.contains(wi._1.toLowerCase) 
+		val hasRegular: Boolean = words.contains(wi._1)
+		val hasLowerCase: Boolean = words.contains(wi._1.toLowerCase)
 		// If either (`or`) is true, say "true"
-		val inDictionary: Boolean = hasRegular | hasLowerCase 
+		val inDictionary: Boolean = hasRegular | hasLowerCase
 		// But remember… we want _bad_ words!
 		inDictionary == false
 	})
@@ -93,8 +93,8 @@ val badWords2: Vector[ (String, Vector[CtsUrn]) ] = {
 	wordIndex.filter( wi => {
 		val w: String = wi._1 // grab the word
 
-		val hasRegular: Boolean = words.contains(w) 
-		val hasLowerCase: Boolean = words.contains(w.toLowerCase) 
+		val hasRegular: Boolean = words.contains(w)
+		val hasLowerCase: Boolean = words.contains(w.toLowerCase)
 		val hyphenatedCheck: Boolean = {
 			if (w.contains("-")) {
 				val w1: String = w.split("-").toVector.head
