@@ -8,7 +8,7 @@ import java.util.Calendar
 
 :load utilities.sc
 
-val lib: CiteLibrary = loadLibrary("text/arist_politics.cex")
+val lib: CiteLibrary = loadLibrary("texts/won.cex")
 
 val tr: TextRepository = lib.textRepository.get
 
@@ -20,7 +20,7 @@ val corp: Corpus = tr.corpus
 
 val exemplarLabel: String = "wt"
 
-/* 
+/*
 What defines a word-break? Note the [ ], making this a regex…
 … "any one of these"
 */
@@ -70,10 +70,10 @@ val tokenizedVector: Vector[CitableNode] = corp.nodes.map( n => {
 	tokens
 }).flatten
 
-/* …About the .flatten at the end: We mapped a Vector[CitableNode] 
+/* …About the .flatten at the end: We mapped a Vector[CitableNode]
 	 and each node became a Vector[CitableNode].
    So we have a Vector[Vector[CitableNode]], which we need to "flatten" into
-   a Vector[CitableNode]. 
+   a Vector[CitableNode].
 
    If you have never tried to do that manually, in another language,
    you have no idea how grateful you are.
@@ -102,4 +102,3 @@ showMe(tokenCorp ~~ u2)
 
 val u2Text: String = (tokenCorp ~~ u2).nodes.map( _.text ).mkString(" ")
 showMe( u2Text )
-

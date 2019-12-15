@@ -6,7 +6,7 @@ val spellCheckSplitters: String =  """[()\[\]·⸁.,; "?·!–—⸂⸃-]"""
 
 val lib: CiteLibrary = loadLibrary("texts/won.cex")
 
-val standardDict: Vector[String] = loadFile("validation-data/SCOWL-wl/standardDict.txt")
+val standardDict: Vector[String] = loadFile("validation-data/standardDict.txt")
 val userDict: Vector[String] = loadFile("validation-data/user-dictionary.txt")
 val words: Vector[String] = standardDict ++ userDict
 
