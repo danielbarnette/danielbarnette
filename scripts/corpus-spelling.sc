@@ -97,8 +97,16 @@ val badWords2: Vector[ (String, Vector[CtsUrn]) ] = {
 		val hasLowerCase: Boolean = words.contains(w.toLowerCase)
 		val hyphenatedCheck: Boolean = {
 			if (w.contains("-")) {
-				val w1: String = w.split("-").toVector.head
-				val w2: String = w.split("-").toVector.tail.mkString
+				val w1: String = {
+					val split = w.split("-").toVector
+					if (split.size > 1) split.head
+					else split.mkString
+				}
+				val w2: String = {
+					val split = w.split("-").toVector
+					if (split.size > 1) split.tail.mkString
+					else split.mkString
+				}
 				if (words.contains(w1) & words.contains(w2)) {
 					true
 				} else false
