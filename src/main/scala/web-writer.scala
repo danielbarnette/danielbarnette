@@ -34,7 +34,7 @@ object webWriter {
   			}
 	  		case None => // do nothing
   		}
-  		
+
   }
 
 
@@ -65,7 +65,7 @@ object webWriter {
 				//val corpVec: Vector[Corpus] = hocuspocus.equalSize( corp, target = 5000 )
 				/* -------------------------------------- */
 
-				// A little reporting… 	
+				// A little reporting…
 				println(" \n ")
 				println(s"Will write ${corpVec.size} pages…")
 				println(" \n ")
@@ -80,7 +80,7 @@ object webWriter {
 					hv.save( filePath = htmlDirectory)
 				}
 
-				// 5. Write the landing page, with the toc.	
+				// 5. Write the landing page, with the toc.
 				landingPage(htmlVec)
 
 		} catch {
@@ -91,7 +91,7 @@ object webWriter {
   }
 
 
-  /* 
+  /*
 				A function: Given a URN and a number, generate a file-name.
   */
   def urnToFileName( urn: CtsUrn, index: Option[Int] = None ): String = {
@@ -106,11 +106,11 @@ object webWriter {
   	}
   }
 
-  /* 
-			We define a new object or "class", HtmlCorpus, that has all the 
+  /*
+			We define a new object or "class", HtmlCorpus, that has all the
 			data we need to write HTML pages for each chunk.
 
-			This class has a .toString method, and a .html method that does 
+			This class has a .toString method, and a .html method that does
 			our work for us.
   */
 	case class HtmlCorpus(
@@ -134,7 +134,7 @@ object webWriter {
 
 
 		def html: String = {
-			val catString: String = catacomb.html(cat)	
+			val catString: String = catacomb.html(cat)
 			val corpString: String = hocuspocus.html(corp)
 
 			val titleString: String = {
@@ -196,7 +196,7 @@ object webWriter {
 			<link href="https://fonts.googleapis.com/css?family=EB+Garamond:400,400i,500,500i,600,600i,700,700i,800,800i&amp;subset=cyrillic-ext,greek,greek-ext,latin-ext" rel="stylesheet">
 			</head>
 			<body>
-			<header>Your header</header>
+			<header>Wealth of Nations</header>
 			<article>
 			${sequenceString}
 			${catString}
@@ -206,7 +206,7 @@ object webWriter {
 			${corpString}
 			${navString}
 			</article>
-			<footer>Your footer</footer>
+			<footer>CSC-270</footer>
 			</body>
 			</html>
 			"""
@@ -250,11 +250,11 @@ object webWriter {
 
 		val workCat: CatalogEntry = vcorp.head.cat
 
-		val catString: String = catacomb.html(workCat)	
+		val catString: String = catacomb.html(workCat)
 
 		val titleString: String = workCat.toString // can fancify this
-	
-		val infoString: String = """<div class="cts_siteDesc">Whatever you want to say here.</div>"""		
+
+		val infoString: String = """<div class="cts_siteDesc">Whatever you want to say here.</div>"""
 
 		val tocHeader: String = """<div class="cts_toc">Table of Contents</div>"""
 
@@ -262,7 +262,7 @@ object webWriter {
 			val firstPassage: String = vc.corp.nodes(0).text
 			val secondPassage: String = vc.corp.nodes(1).text
 
-			s"""<li class="cts_tocEntry"><span class="cts_tocIndex">${vc.index + 1}.</span> 
+			s"""<li class="cts_tocEntry"><span class="cts_tocIndex">${vc.index + 1}.</span>
 			<a href="${urnToFileName(vc.corp.nodes.head.urn.dropPassage, Some(vc.index))}">
 			<span class="cts_tocBit">${firstPassage}: ${secondPassage}</span>
 			</a></li>"""
@@ -282,14 +282,14 @@ object webWriter {
 			<link href="https://fonts.googleapis.com/css?family=EB+Garamond:400,400i,500,500i,600,600i,700,700i,800,800i&amp;subset=cyrillic-ext,greek,greek-ext,latin-ext" rel="stylesheet">
 			</head>
 			<body>
-			<header>Your header</header>
+			<header>Wealth Of Nations</header>
 			<article>
 			${catString}
 			${infoString}
 			${tocHeader}
-			${toc}	
+			${toc}
 			</article>
-			<footer>Your footer</footer>
+			<footer>CSC-270</footer>
 			</body>
 			</html>
 		"""
