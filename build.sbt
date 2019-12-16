@@ -18,7 +18,7 @@ Compile / run / fork := true
 
 connectInput in run := true
 
-javaOptions in run ++= Seq(
+javaOptions in console ++= Seq(
     "-Xms256M",
     "-Xmn16M",
     "-Xmx4G"
@@ -36,4 +36,3 @@ libraryDependencies ++=   Seq(
   "edu.furman.classics" %% "citewriter" % "1.0.1",
   "com.github.pathikrit" %% "better-files" % "3.8.0"
 )
-
